@@ -5,6 +5,9 @@ account: gershiny
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 871509
-bundleId: 2017791
+bundleId: 2018008
 url: https://gershiny.shinyapps.io/getmap/
-when: 1555485702.6389
+when: 1555493420.60363
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: adhoc/gVis.R|adhoc/leaflet.R|adhoc/main.R|adhoc/postcode.R
