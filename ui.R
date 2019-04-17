@@ -1,6 +1,6 @@
 # ui.R
 
 ui <- fluidPage(
-  print("Hello World!")
-  ,leafletOutput("mymap",height = 1000)
+  # print("Hello World!")
+  leafletOutput("mymap",height = 1000)
   )
