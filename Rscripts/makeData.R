@@ -4,9 +4,11 @@
 source('Rscripts/setup.R')
 
 # lat and long ------------------------------------------------------------
+# latitude and longitude, by postcode, from downloaded csv file
 source('Rscripts/getLatlong.R')
 
 # seifa -------------------------------------------------------------------
+# socioeconomic data & population, by postcode, from downloaded text file
 source('Rscripts/getSeifa.R')
 
 # installations -----------------------------------------------------------
@@ -66,15 +68,5 @@ aggData <- myData[
 saveRDS(aggData, 'byMonth.rds')
 
 
+message('successful completion.')
 
-
-# # kwData <- longData[, .SD[.N], by = .(postcode)]
-# kwData <- longData
-# 
-# myData <- merge(
-#   sesData[ !is.na(population), .(postcode, population, score, decile, percentile)]
-#   ,kwData[,.(postcode, kW, capacity, month)]
-#   ,by = 'postcode'
-#   ,all = FALSE
-# )
-# 

@@ -15,7 +15,7 @@ pcData <- myData[
     long = mean(long, na.rm = T)
     ,lat = mean(lat, na.rm = T)
     ,num = .N
-    ,locale = paste(locality, collapse = ',')
+    ,locale = paste(locality, collapse = ', ')
   )
   , by = .(postcode, State)
   ]

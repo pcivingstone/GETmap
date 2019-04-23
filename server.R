@@ -79,7 +79,7 @@ server <- function(input, output, session){
       ,sizevar = 'population'
       ,chartid = 'capacity'
       ,options = list(
-        width = 600
+        width = 800
         ,height = 600
       )
     )

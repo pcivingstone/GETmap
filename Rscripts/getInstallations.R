@@ -4,6 +4,12 @@ myFilename <- 'c://Projects/commonData/Postcode data for small-scale installatio
 myData <- fread(myFilename)
 # str(myData)
 
+myFilename <- "http://www.cleanenergyregulator.gov.au/DocumentAssets/Documents/Postcode%20data%20for%20small-scale%20installations%20-%20SGU-Solar.csv"
+myData <- fread(
+  myFilename
+  ,skip = 3
+  )
+
 # just keep the installations capacity in kw
 myData <- cbind(
   postcode = myData$`Small Unit Installation Postcode`
