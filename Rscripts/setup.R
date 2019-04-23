@@ -10,3 +10,7 @@ library(data.table)
 library(leaflet)
 library(shiny)
 library(ggplot2)
+library(googleVis)
+
+# functions ---------------------------------------------------------------
+source('Rfunctions/stripComma.R')
