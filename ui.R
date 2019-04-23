@@ -12,10 +12,23 @@ ui <- fluidPage(
     ,textInput('postcode','Select postcode to centre:',value = '1234')
   )
   ,mainPanel(
-    leafletOutput(
-      "mymap"
-      ,height = 700
-      # ,height = '100%'
+    tabsetPanel(
+      tabPanel(
+        'Interactive Map'
+        ,leafletOutput(
+          "mymap"
+          ,height = 700
+          # ,height = '100%'
+          )
+      )
+      ,tabPanel(
+        'Table'
+        ,dataTableOutput('table')
+        )
+      ,tabPanel(
+        'Motion Chart'
+        ,htmlOutput('chart')
+      )
       )
     )
   )

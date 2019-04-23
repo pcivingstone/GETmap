@@ -4,6 +4,17 @@ source('Rscripts/setup.R',T)
 
 # get data ----------------------------------------------------------------
 
-df <- readRDS('pcData.rds')  # not a df
-tables()
+# source('Rscripts/getData.R')
+myData <- readRDS('pcData.rds')
+df <- as.data.frame(myData)
+df$kw <- df$capacity
+# df <- readRDS('pcData.rds')  # not a df
+# tables()
 str(df)
+
+aggData <- readRDS('byMonth.rds')
+x <- aggData
+x[, id := paste(State,decile)]
+x[, month := as.Date(month)]
+x[, capPerPop := cumulative/population]
+str(x)

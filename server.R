@@ -65,6 +65,26 @@ server <- function(input, output, session){
     m
   })
   # return(output)
+  output$table <- renderDataTable({
+    df
+  })
+  
+  output$chart <- renderGvis(
+    gvisMotionChart(
+      x
+      ,idvar = 'id'
+      ,timevar = 'month'
+      ,xvar = 'cumulative'
+      ,yvar = 'perMonth'
+      ,sizevar = 'population'
+      ,chartid = 'capacity'
+      ,options = list(
+        width = 600
+        ,height = 600
+      )
+    )
+  )
 }
+
 
 
