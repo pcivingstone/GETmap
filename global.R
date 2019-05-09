@@ -7,7 +7,8 @@ source('Rscripts/setup.R',T)
 # source('Rscripts/getData.R')
 myData <- readRDS('pcData.rds')
 df <- as.data.frame(myData)
-df$kw <- df$capacity
+df$Mw <- round(df$capacity/1000,3)
+
 # df <- readRDS('pcData.rds')  # not a df
 # tables()
 str(df)

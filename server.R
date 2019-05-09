@@ -10,58 +10,42 @@ server <- function(input, output, session){
     df <- data()
     
     pal <- colorNumeric(
-      # palette = 'Dark2'
-      # palette = 'PuOr'
-      # palette = heat.colors(9, alpha = 0.9)
       palette = rainbow(7)
-      # palette = 'Spectral'
-      # palette = 'Set1'
-      , domain = range(df$kw)
-      # , alpha = TRUE
+      , domain = range(df$Mw)
       )
     
     m <- leaflet(data = df) %>%
-      # addProviderTiles("Esri.WorldImagery") %>%
-      addProviderTiles("Esri.WorldTopoMap") %>%
-      # addTiles() %>%
-      # addMarkers(
-      #   lng = ~long
-      #   ,lat = ~lat
-      #   ,clusterOptions = markerClusterOptions()
-      #   ,popup = paste(
-      #     "postcode ="
-      #     ,df$postcode
-      #     ,"<br>"
-      #   )
-      # ) %>%
-      # addCircleMarkers(
-      addCircles(
+      
+      addProviderTiles(
+        providers$Stamen.Toner
+        , group = "Black and white"
+        ) %>% 
+      
+      addCircleMarkers(
         lng = ~long
         ,lat = ~lat
-        ,radius = ~1e4*kw/max(kw)
+        ,radius = ~100*Mw/max(Mw)
         ,label = ~as.character(postcode)
         # ,clusterOptions = markerClusterOptions()
         ,popup = paste(
           "postcode: "
           ,df$postcode
           ,"<br>"
-          ,"localities: "
-          ,df$locale
-          ,"<br>"
-          ,"Installed Solar (kw) to Feb 2019:"
-          ,df$kw
+          ,"Installed Solar (Mw) to Feb 2019:"
+          ,df$Mw
           ,"<br>"
           ,"Percentile Nationally: "
           ,df$percentile
+          ,"<br>"
+          ,"localities: "
+          ,df$locale
         )
-        ,color = ~pal(kw)
-        # , color = 'black'
+        ,color = ~pal(Mw)
         ,fillOpacity = 0.5
-      ) %>% 
-      setView(lng = 145.05, lat = -37.89 , zoom = 12) %>% 
-      # addMiniMap()
-      addScaleBar(options = scaleBarOptions(imperial = F)) %>% 
-      addLegend(pal = pal, values = ~kw)
+      ) %>%
+      addLegend(pal = pal, values = ~Mw) %>%
+      setView(lng = 144.9568, lat = -37.8174, zoom = 10)
+
     m
   })
   # return(output)
