@@ -42,7 +42,7 @@ temp <- myData[, .SD[.N], by = .(postcode)]
 
 saveRDS(
   temp[
-    ,.(postcode,State,long,lat,population,percentile,decile,capacity,capPerK,locale) # just these columns
+    ,.(postcode,state,long,lat,population,percentile,decile,capacity,capPerK,locale) # just these columns
     ]
   ,'pcData.rds'
   )
@@ -59,7 +59,7 @@ aggData <- myData[
     ,long = mean(long)
   )
   ,by = .(
-    State
+    state
     ,decile
     ,month
   )

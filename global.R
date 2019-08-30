@@ -4,7 +4,7 @@ source('Rscripts/setup.R',T)
 
 # get data ----------------------------------------------------------------
 
-# source('Rscripts/getData.R')
+# source('Rscripts/makeData.R')
 myData <- readRDS('pcData.rds')
 df <- as.data.frame(myData)
 df$Mw <- round(df$capacity/1000,3)
@@ -15,7 +15,7 @@ str(df)
 
 aggData <- readRDS('byMonth.rds')
 x <- aggData
-x[, id := paste(State,decile)]
+x[, id := paste(state,decile)]
 x[, month := as.Date(month)]
 x[, capPerPop := cumulative/population]
 str(x)
