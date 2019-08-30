@@ -1,7 +1,8 @@
 # getInstallations.R
 
 # myFilename <- 'c://Projects/commonData/Postcode data for small-scale installations 2017 - SGU-Solar.csv'
-myFilename <- 'c://Users/Paul/projects/common/Postcode data for small-scale installations 2017 - SGU-Solar.csv'
+# myFilename <- 'c://Users/Paul/projects/common/Postcode data for small-scale installations 2017 - SGU-Solar.csv'
+myFilename <- 'data/Postcode data for small-scale installations 2017 - SGU-Solar.csv'
 myData <- fread(myFilename)
 # str(myData)
 

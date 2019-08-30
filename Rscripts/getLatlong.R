@@ -1,6 +1,7 @@
 # getLatlong.R
 
-myFilename <- 'c://Users/Paul/projects/common/australian_postcodes.csv'
+# myFilename <- 'c://Users/Paul/projects/common/australian_postcodes.csv'
+myFilename <- 'data/australian_postcodes.csv'
 myData <- fread(
   file = myFilename
   , na.strings = 'NULL'
@@ -29,3 +30,4 @@ pcData <- pcData[, .SD[1], by = .(postcode)]
 
 str(pcData)
 tables()
+
