@@ -5,9 +5,9 @@ account: gershiny
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 871509
-bundleId: 2032006
+bundleId: 2071695
 url: https://gershiny.shinyapps.io/getmap/
-when: 1556009147.71802
+when: 1557388681.18955
 asMultiple: FALSE
 asStatic: FALSE
-ignoredFiles: Rscripts/getInstallations.R|Rscripts/getLatlong.R|Rscripts/getSeifa.R|Rscripts/makeData.R|adhoc
+ignoredFiles: adhoc
