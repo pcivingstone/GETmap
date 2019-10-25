@@ -1,13 +1,15 @@
 # getInstallations.R
 
-myFilename <- 'c://Projects/commonData/Postcode data for small-scale installations 2017 - SGU-Solar.csv'
+# myFilename <- 'c://Projects/commonData/Postcode data for small-scale installations 2017 - SGU-Solar.csv'
+# myFilename <- 'c://Users/Paul/projects/common/Postcode data for small-scale installations 2017 - SGU-Solar.csv'
+myFilename <- 'data/Postcode data for small-scale installations 2017 - SGU-Solar.csv'
 myData <- fread(myFilename)
 # str(myData)
 
 myFilename <- "http://www.cleanenergyregulator.gov.au/DocumentAssets/Documents/Postcode%20data%20for%20small-scale%20installations%20-%20SGU-Solar.csv"
 myData <- fread(
   myFilename
-  ,skip = 3
+  # ,skip = 3
   )
 
 # just keep the installations capacity in kw

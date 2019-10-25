@@ -1,8 +1,14 @@
 # getLatlong.R
 
-myFilename <- 'c://Projects/commonData/australian_postcodes.csv'
-myData <- fread(file = myFilename, na.strings = 'NULL')
+# myFilename <- 'c://Users/Paul/projects/common/australian_postcodes.csv'
+myFilename <- 'data/australian_postcodes.csv'
+myData <- fread(
+  file = myFilename
+  , na.strings = 'NULL'
+)
 dim(myData)
+head(myData, 20)
+
 myData <- myData[type == 'Delivery Area']
 dim(myData)
 myData <- myData[complete.cases(myData[, .(lat, long)])]
@@ -17,10 +23,11 @@ pcData <- myData[
     ,num = .N
     ,locale = paste(locality, collapse = ', ')
   )
-  , by = .(postcode, State)
+  , by = .(postcode, state)
   ]
 setorder(pcData, postcode, -num)
 pcData <- pcData[, .SD[1], by = .(postcode)]
 
 str(pcData)
 tables()
+
