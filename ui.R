@@ -1,7 +1,7 @@
 # ui.R
 
 ui <- fluidPage(
-  titlePanel("Installed Solar Panel Capacity by Postcode at Feb 2019")
+  titlePanel("Installed Solar Panel Capacity by Postcode")
   # ,sidebarPanel(
   #   dateInput(
   #     'month'
