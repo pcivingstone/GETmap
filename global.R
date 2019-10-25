@@ -15,7 +15,7 @@ str(df)
 
 aggData <- readRDS('byMonth.rds')
 x <- aggData
-x[, id := paste(state,decile)]
+x[, id := paste(State,decile)]
 x[, month := as.Date(month)]
 x[, capPerPop := cumulative/population]
 str(x)
